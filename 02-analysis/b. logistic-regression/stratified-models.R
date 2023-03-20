@@ -102,7 +102,7 @@ write.csv( (atopic_contingency), "atopic_contingency_ICW07.csv")
 
 
 
-mod_ICW07 = glm(groups_ICW07 ~  groups , data = full_atopic, family = "binomial")
+mod_ICW07 = glm(groups_ICW07 ~  groups +aaordom  +matasthm + E10_0 + mathard0 +newgendr , data = full_atopic, family = "binomial")
 
 obs_results_a  = data.frame( group = "atopic",
                              exposure = names(coef(mod_ICW07))[2:5], 
